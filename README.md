@@ -14,8 +14,8 @@ Site web dynamique de consultation et de gestion de véhicules, développée dan
 
 ## Aperçu du projet
 
-![Page d'accueil de l'application](/SAÉ-203/img/accueil.png)
-![Détail d'un véhicule](/SAÉ-203/img/detail.png)
+![Page d'accueil de l'application](./img/accueil.png)
+![Détail d'un véhicule](./img/detail.png)
 
 ##  Installation locale (Laragon)
 1. Cloner ce dépôt GitHub.
