@@ -1,0 +1,444 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b1120;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #131c2f;
+    border-bottom: 1px solid #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.custom-header h1 a {
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.8), 0 0 20px rgba(0, 243, 255, 0.4);
+    transition: text-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.custom-header h1 a:hover 
+{
+    text-shadow: 0 0 15px rgba(176, 38, 255, 0.8), 0 0 30px rgba(176, 38, 255, 0.6);
+    color: #f8fafc;
+}
+
+/* Grille du catalogue */
+.catalogue-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem 1rem;
+}
+
+/* =========================================
+   ZONE D'AJOUT BDD (Conteneur <details>)
+   ========================================= */
+
+/* 1. Le conteneur principal */
+.zone-ajout-bdd {
+    background: #141e33;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    margin: 0 auto 3rem auto; /* Centré horizontalement et espacé du bas */
+    max-width: 800px; /* Prend plus de place, mais reste lisible */
+    overflow: hidden; /* Empêche le contenu de déborder des bords arrondis */
+    transition: all 0.3s ease;
+}
+
+/* 2. Le titre cliquable (Avant ouverture) */
+.zone-ajout-bdd summary {
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #0f172a;
+    color: #00f3ff;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    list-style: none; /* Cache la flèche par défaut du navigateur */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+
+
+.zone-ajout-bdd summary:hover {
+    background-color: #1a2642;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+}
+
+/* Ajout d'une flèche animée personnalisée à droite du titre */
+.zone-ajout-bdd summary::after {
+    content: '▼';
+    font-size: 0.9rem;
+    color: #64748b;
+    transition: transform 0.3s ease;
+}
+
+/* Quand le menu est ouvert, la flèche tourne */
+.zone-ajout-bdd[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* =========================================
+   LE FORMULAIRE À L'INTÉRIEUR
+   ========================================= */
+
+.formulaire-sae {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Crée de l'espace régulier entre tous les champs */
+    border-top: 1px solid #e2e8f0;
+}
+
+.formulaire-sae input[type="text"],
+.formulaire-sae input[type="number"] {
+    background-color: #0f172a;
+    color: #b92626;
+    border: 1px solid #334155;
+}
+
+.formulaire-sae input[type="text"]:focus,
+.formulaire-sae input[type="number"]:focus {
+    border-color: #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+/* 3. La sélection de la marque (Boutons radio) */
+.choix-marque p {
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+    color: #94a3b8;
+}
+
+.choix-marque {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* On donne l'apparence de "boutons" aux labels des radios */
+.label-radio {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    border: 1px solid #334155;
+}
+
+.label-radio:hover {
+    background-color: #1e293b;
+    border-color: #b026ff; /* Touche de violet au survol */
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+}
+
+/* 4. Les champs de saisie et menu deroulant */
+/* Les champs de saisie ET le menu déroulant */
+.formulaire-sae input[type="text"],
+.formulaire-sae input[type="number"],
+.formulaire-sae select {
+    background-color: #0f172a;
+    color: #ffffff;
+    border: 1px solid #334155;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.formulaire-sae input[type="text"]:focus,
+.formulaire-sae input[type="number"]:focus,
+.formulaire-sae select:focus {
+    border-color: #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    outline: none;
+}
+
+/* Couleurs des choix à l'intérieur du menu déroulant */
+.formulaire-sae select option {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* 5. Le bouton de validation */
+.btn-voir {
+    background-color: transparent;
+    color: #00f3ff;
+    border: 2px solid #00f3ff;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 1rem;
+}
+
+.btn-voir:hover {
+    background-color: #00f3ff;
+    color: #0b1120;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+}
+
+.btn-voir:active {
+    transform: scale(0.98); /* Petit effet d'enfoncement au clic */
+}
+
+/* Grille des marques forcée en ligne */
+.grille-marques {
+    display: flex;
+    flex-wrap: wrap; /* Aligne en ligne et passe à la ligne s'il n'y a plus de place */
+    justify-content: center; /* Centre les cartes au milieu de l'écran */
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+/* Cartes Marques */
+
+.carte-marque, 
+.carte-modele-photo {
+    background: #141e33;
+    border: 1px solid #1e293b;
+    color: #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
+}
+
+.carte-marque h3, 
+.carte-modele-corps h3 {
+    color: #00f3ff;
+}
+
+.carte-marque:hover, 
+.carte-modele-photo:hover {
+    border-color: #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4), 0 0 5px rgba(176, 38, 255, 0.2);
+    color: #ffffff;
+}
+
+.carte-marque {
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.carte-marque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+
+.carte-marque img {
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+
+/* Cartes Modèles avec Photos --- */
+.grille-modeles-photos {
+    display: flex;
+    flex-wrap: wrap;       /* Permet de passer à la ligne s'il n'y a plus de place */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 2rem;             /* Espace de 32px entre chaque carte */
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+
+/* Erreurs ou alertes */
+.erreur-statut {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+
+.pas-d-image {
+    width: 100%;
+    height: 350px;
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border-radius: 8px;
+}
+
+
+.carte-modele-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 280px; 
+    display: block;       
+}
+
+
+.carte-modele-photo:hover {
+    transform: translateY(-5px);
+}
+
+
+.carte-modele-photo img, .pas-de-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+.pas-de-photo {
+    background-color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.carte-modele-corps {
+    padding: 1.25rem;
+}
+
+.carte-modele-corps h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.badge-annee {
+    display: inline-block;
+    background-color: transparent;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #b026ff;
+    border: 1px solid #b026ff;
+    box-shadow: 0 0 5px rgba(176, 38, 255, 0.3);
+}
+
+/* Bouton Retour */
+.btn-retour {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #b026ff;
+    text-shadow: 0 0 5px rgba(176, 38, 255, 0.3);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-retour:hover {
+    color: #d946ef;
+}
+
+
+/* Page de Détail */
+.page-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    background: #131c2f;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.detail-infos h2 {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.details-spec {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+/* --- Ajouts pour le Carrousel Bootstrap --- */
+#carouselVoiture {
+    width: 100%;
+    max-width: 500px;
+}
+
+.img-carrousel {
+    height: 350px;
+    object-fit: cover;
+}
+
+.prix-badge {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00f3ff;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+    margin-bottom: 1rem;
+}
+
+/* --- FILTRES PAR ANNÉE --- */
+
+.zoneFiltres {
+    background: #141e33;
+    border: 1px solid #1e293b;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* 1. Par défaut, aucune voiture n'est visible  */
+.carte-modele-photo.avant-2010,
+.carte-modele-photo.apres-2010 {
+    display: none !important;
+}
+
+/* 2. En CSS, lorsque la classe est ajoutée au main, on affiche les voitures correspondantes */
+/* On utilise "flex" car c'est le comportement idéal pour des cartes avec image + texte */
+main.FiltreAvant2010 .carte-modele-photo.avant-2010 { 
+    display: flex !important; 
+}
+main.FiltreApres2010 .carte-modele-photo.apres-2010 { 
+    display: flex !important; 
+}
