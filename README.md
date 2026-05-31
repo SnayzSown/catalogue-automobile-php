@@ -13,10 +13,9 @@ Site web dynamique de consultation et de gestion de véhicules, développée dan
 - **Environnement de développement :** Laragon / Git / Visual Studio Code
 
 ## Aperçu du projet
-*(Remplacez ces lignes par des captures d'écran de votre site pour que les recruteurs voient le rendu visuel instantanément !)*
 
-![Page d'accueil de l'application](./img/accueil.png)
-![Détail d'un véhicule](./img/detail.png)
+![Page d'accueil de l'application](/SAÉ-203/img/accueil.png)
+![Détail d'un véhicule](/SAÉ-203/img/detail.png)
 
 ##  Installation locale (Laragon)
 1. Cloner ce dépôt GitHub.
